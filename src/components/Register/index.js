@@ -22,24 +22,7 @@ const Register = (props) => {
         }
     }, [showNotification]);
 
-    const getToken = async (username) => {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({username})
-        }
-        const response = await fetch('https://leaderboardbackend-navy.vercel.app/api/auth/v1/login', options);
-        const data = await response.json();
-        const userData = JSON.stringify(data.data);
-        if (data.success) {
-            localStorage.setItem('userData', userData,{path:'/',});
-        } else {
-             alert(data.message);
-        }
-    }
-
+    
     const registrationApiCall = async (user) => {
         const {history} = props;
         const options = {
@@ -64,7 +47,6 @@ const Register = (props) => {
             setTimeout(() => {
                 history.push('/');
             }, 3000);
-            getToken(username);
 
         } else {
             alert(data.message);
