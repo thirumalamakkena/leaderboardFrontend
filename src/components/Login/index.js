@@ -28,7 +28,7 @@ const Login = (props) => {
             body: JSON.stringify(user)
         }
 
-        const response = await fetch('http://localhost:7000/api/auth/v1/login', options);
+        const response = await fetch('https://leaderboardbackend-navy.vercel.app/api/auth/v1/login', options);
         const data = await response.json();
         const userData = JSON.stringify(data.data);
         

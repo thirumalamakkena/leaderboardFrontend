@@ -28,7 +28,7 @@ class Home extends Component {
   };
 
   getHistory = async (username) => {
-    const url = "http://localhost:7000/api/user/v1/your-history";
+    const url = "https://leaderboardbackend-navy.vercel.app/api/user/v1/your-history";
     const options = {
       method: "POST",
       headers: {
@@ -55,7 +55,7 @@ class Home extends Component {
   }
 
   onClaimingPoints = async (username) => {
-    const url = "http://localhost:7000/api/user/v1/claim-points";
+    const url = "https://leaderboardbackend-navy.vercel.app/api/user/v1/claim-points";
     const options = {
       method: "PATCH",
       headers: {
@@ -77,7 +77,7 @@ class Home extends Component {
   };
 
   handleDashboardData = async () => {
-    const url = "http://localhost:7000/api/user/v1/get-users";
+    const url = "https://leaderboardbackend-navy.vercel.app/api/user/v1/get-users";
     const options = {
       method: "GET",
     };
@@ -99,7 +99,7 @@ class Home extends Component {
 
   getDWMHistory = async (report) => {
     console.log(report);
-    const url = `http://localhost:7000/api/user/v1/your-${report}-history`;
+    const url = `https://leaderboardbackend-navy.vercel.app/api/user/v1/your-${report}-history`;
     const options = {
       method: "GET",
     };

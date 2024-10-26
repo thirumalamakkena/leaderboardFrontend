@@ -30,10 +30,11 @@ const Register = (props) => {
             },
             body: JSON.stringify({username})
         }
-        const response = await fetch('http://localhost:7000/api/auth/v1/login', options);
+        const response = await fetch('https://leaderboardbackend-navy.vercel.app/api/auth/v1/login', options);
         const data = await response.json();
+        const userData = JSON.stringify(data.data);
         if (data.success) {
-            localStorage.setItem('token', data.token,{path:'/',});
+            localStorage.setItem('userData', userData,{path:'/',});
         } else {
              alert(data.message);
         }
@@ -49,7 +50,7 @@ const Register = (props) => {
             body: JSON.stringify(user)
         }
 
-        const response = await fetch('http://localhost:7000/api/auth/v1/register', options);
+        const response = await fetch('https://leaderboardbackend-navy.vercel.app/api/auth/v1/register', options);
         const data = await response.json();
         if (data.success) {
             setMessage(data.message);
