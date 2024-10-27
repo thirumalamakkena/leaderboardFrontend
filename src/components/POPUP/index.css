@@ -1,6 +1,7 @@
 
 .notification {
     position: fixed;
+    z-index: 1000;
     top: 20px;
     right: 20px;
     background-color: #e7ffe6;
